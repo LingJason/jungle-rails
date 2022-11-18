@@ -46,6 +46,14 @@
         <li class="nav-item">
           <%= link_to 'About', [:about, :index], class: "nav-link " %> 
         </li>
+        <% if current_user %>
+        <li> 
+  Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
+</li>
+<% else %>
+<li>
+  <%= link_to 'Logs', '/login' %> | <%= link_to 'Signup', '/signup' %>
+<% end %></li>
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle text-danger"
