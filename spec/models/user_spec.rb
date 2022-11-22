@@ -57,17 +57,17 @@ RSpec.describe User, type: :model do
   describe '.authenticate_with_credentials' do
     
     it "Email has spaces before and after it" do
-      @user = User.new(name: 'Jason', email: 'JasonLing@gmail.com', password:'123123', password_confirmation:'123123')
-      @user.save
-      login = User.authenticate_with_credentials(' JasonLing@gmail.com ','123123')
-      expect(login).to be_valid
+      @user = User.new(name: 'tony', email: 'tony@gmail.com', password:'12345', password_confirmation:'12345')
+      @user.save!
+      logged_in_user = User.authenticate_with_credentials('  tony@gmail.com  ', @user.password)
+      expect(logged_in_user.id).to be_present
     end
 
     it "Email has is not case sensitive" do
       @user = User.new(name: 'Jason', email: 'JasonLing@gmail.com', password:'123123', password_confirmation:'123123')
       @user.save
-      login = User.authenticate_with_credentials('JASONLING@gmail.com','123123')
-      expect(login).to be_valid
+      logged_in_user = User.authenticate_with_credentials('JASONLING@gmail.com','123123')
+      expect(logged_in_user.id).to be_present
     end
 
   end

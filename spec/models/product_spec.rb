@@ -8,11 +8,7 @@ RSpec.describe Product, type: :model do
   it "Example with all 4 fields" do
   @category = Category.new
   @category.name = 'Flowers'
-  @product = Product.new
-  @product.name = 'Swamp ConeFlower'
-  @product.price = 29.99
-  @product.quantity = 21
-  @product.category = @category
+  @product = Product.new(name: 'Swamp ConeFlower', price: 29.99, quantity: 21, category: @category)
   expect(@product).to be_valid
   end
 
