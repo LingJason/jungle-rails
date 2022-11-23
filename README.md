@@ -29,3 +29,9 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 - Bootstrap 5
 - PostgreSQL 9.x
 - Stripe
+
+## Screenshots
+![Home Page](docs/home_page.png)
+![Products and SoldOut Products](docs/products_and_sold_out.png)
+![Payment](docs/payment_api.png)
+![Confirmation Of Order](docs/confirmation_page_after_order.png)
