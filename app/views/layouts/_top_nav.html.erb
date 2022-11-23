@@ -47,13 +47,17 @@
           <%= link_to 'About', [:about, :index], class: "nav-link " %> 
         </li>
         <% if current_user %>
-        <li> 
-  Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
-</li>
-<% else %>
-<li>
-  <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
-<% end %></li>
+          <li class="nav-item"> 
+            Signed in as <%= current_user.name %> <%= link_to "Logout", '/logout', class: "nav-link" %>
+          </li>
+          <% else %>
+          <li class="nav-item">
+            <%= link_to 'Login', '/login', class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Signup', '/signup', class: "nav-link" %>
+        <% end %>
+          </li>
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle text-danger"
